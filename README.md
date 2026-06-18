@@ -25,3 +25,24 @@ The engine includes an automated setup script. You don't need to manually instal
 
 *Note: If you prefer manual installation, you can run in cmd:
 pip install customtkinter lightkurve astropy astroquery matplotlib numpy
+
+## Gallery & Performance Matrix
+
+<table>
+  <tr>
+    <td align="center"><b>AU Mic b (Primary Matrix)</b></td>
+    <td align="center"><b>AU Mic b (Statistical Morphology)</b></td>
+  </tr>
+  <tr>
+    <td><img src="assets/AU Mic b 1.png" width="100%"></td>
+    <td><img src="assets/AU Mic b 2.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>TOI-143 b (Primary Matrix)</b></td>
+    <td align="center"><b>TOI-143 b (Statistical Morphology)</b></td>
+  </tr>
+  <tr>
+    <td><img src="assets/TOI-143 b 1png" width="100%"></td>
+    <td><img src="assets/TOI-143 b 2.png" width="100%"></td>
+  </tr>
+</table>
