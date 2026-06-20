@@ -7,12 +7,25 @@ import time
 import socket
 import ctypes
 import threading
+import ssl
+
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+
+if getattr(sys, 'frozen', False):
+    base_dir = os.path.expanduser('~')
+    os.environ['ASTROPY_CACHE_DIR'] = os.path.join(base_dir, '.astropy', 'cache')
+    os.environ['MPLCONFIGDIR'] = os.path.join(base_dir, '.matplotlib')
 
 if sys.platform == "win32":
     appdata_base = os.getenv('APPDATA', os.path.expanduser("~"))
-    cache_dir = os.path.join(appdata_base, "ExoTransitEngine_Cache")
+    cache_dir = os.path.join(appdata_base, "VISTAEngine_Cache")
 else:
-    cache_dir = os.path.join(os.path.expanduser("~"), ".exotransit_cache")
+    cache_dir = os.path.join(os.path.expanduser("~"), ".VISTA_cache")
 
 os.makedirs(os.path.join(cache_dir, 'astropy_config'), exist_ok=True)
 os.makedirs(os.path.join(cache_dir, 'astropy_cache'), exist_ok=True)
@@ -22,7 +35,7 @@ os.environ['ASTROPY_CACHE_DIR'] = os.path.join(cache_dir, 'astropy_cache')
 os.environ['ASTROPY_USE_DOWNLOAD_CACHE'] = 'True'
 
 try:
-    myappid = 'mycompany.exotransit.engine.v5.3.3'
+    myappid = 'mycompany.VISTA.engine.v5.3.4'
     ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 except Exception:
     pass
@@ -360,7 +373,7 @@ def export_pipeline_results():
                 writer.writerow([t, f])
         txt_path = os.path.join(export_folder, f"{clean_name}_summary.txt")
         with open(txt_path, mode='w') as file:
-            file.write(f"EXOTRANSIT ENGINE EXPORT DATA FOR: {user_input.upper()}\n")
+            file.write(f"VISTA ENGINE EXPORT DATA FOR: {user_input.upper()}\n")
             file.write("="*45 + "\n")
             file.write(current_metrics_text + "\n")
         if fig1_global:
@@ -625,7 +638,7 @@ def safely_close_app():
     root.quit()
 
 root = ctk.CTk()
-root.title("ExoTransit Engine v5.3.3")
+root.title("VISTA Engine v5.3.4")
 root.geometry("1100x750")
 
 if os.path.exists(icon_full_path):
@@ -639,8 +652,8 @@ root.protocol("WM_DELETE_WINDOW", safely_close_app)
 sidebar = ctk.CTkFrame(root, width=280, corner_radius=0)
 sidebar.pack(side="left", fill="y")
 
-ctk.CTkLabel(sidebar, text="ExoTransit Vetting Pipeline Engine", font=("Segoe UI", 16, "bold"), text_color="#2980b9").pack(pady=(20, 2), padx=20, anchor="w")
-ctk.CTkLabel(sidebar, text="Exo Planet Analyzer v5.3.3", font=("Segoe UI", 10), text_color="#7f8c8d").pack(pady=(0, 15), padx=20, anchor="w")
+ctk.CTkLabel(sidebar, text="VISTA Vetting Pipeline", font=("Segoe UI", 16, "bold"), text_color="#2980b9").pack(pady=(20, 2), padx=20, anchor="w")
+ctk.CTkLabel(sidebar, text="Exo Planet Analyzer v5.3.4", font=("Segoe UI", 10), text_color="#7f8c8d").pack(pady=(0, 15), padx=20, anchor="w")
 
 ctk.CTkLabel(sidebar, text="Target Catalog Search Entry:", font=("Segoe UI", 11, "bold")).pack(padx=20, anchor="w")
 star_search_entry = ctk.CTkEntry(sidebar, width=240, height=30, font=("Consolas", 12), placeholder_text="e.g., TRAPPIST-1 c, K2-18 b")
