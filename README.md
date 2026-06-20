@@ -26,25 +26,25 @@ pip install customtkinter lightkurve astropy astroquery matplotlib numpy
     <td align="center" width="50%"><b>TOI-1452 b (Statistical Morphology)</b></td>
   </tr>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/TOI-1452b%20(2).jpg" width="100%"></td>
-    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/TOI-1452b%20(1).jpg" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/TOI-1452b(2).png" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/TOI-1452b(1).png" width="100%"></td>
   </tr>
 
   <tr>
-    <td align="center"><b>KEPLER-37 B (Primary Light Curve Matrix)</b></td>
-    <td align="center"><b>KEPLER-37 B (Statistical Morphology)</b></td>
+    <td align="center"><b>KEPLER-37 b (Primary Light Curve Matrix)</b></td>
+    <td align="center"><b>KEPLER-37 b (Statistical Morphology)</b></td>
   </tr>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/Kepler-37%20b%20(2).jpg" width="100%"></td>
-    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/Kepler-37%20b%20(1).jpg" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/Kepler-37b(2).png" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/Kepler-37b(1).png" width="100%"></td>
   </tr>
 
   <tr>
-    <td align="center"><b>KEPLER-51 B (Primary Light Curve Matrix)</b></td>
-    <td align="center"><b>KEPLER-51 B (Statistical Morphology)</b></td>
+    <td align="center"><b>KEPLER-51 b (Primary Light Curve Matrix)</b></td>
+    <td align="center"><b>KEPLER-51 b (Statistical Morphology)</b></td>
   </tr>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/Kepler-51%20b%20(2).jpg" width="100%"></td>
-    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/Kepler-51%20b%20(1).jpg" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/Kepler-51b(2).png" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/Prathmaya/VISTA-Engine-v5.3.4/Assets/Kepler-51b(1).png" width="100%"></td>
   </tr>
 </table>
