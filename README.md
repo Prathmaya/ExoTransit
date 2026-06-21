@@ -9,6 +9,7 @@ A lightweight, multi-threaded exoplanet discovery engine built in Python. The ap
 * Stellar Variability Filter: Adaptive flattening window to isolate transit signals from active starspot rotations.
 * BLS Periodogram Sweep: Box Least Squares algorithm spectral power analysis to detect exact orbital intervals.
 * Morphology Sub-Models: Interactive folding maps, high-resolution micro-scale transit geometry fits, and flux probability density histograms.
+* Precision Telemetry Metrics: Real-time local derivation of critical transit parameters, calculating physical planet radius, explicit transit duration in hours and statistical Signal-to-Noise Ratio (SNR) strength.
 * Import and Export: The application features options to import and export planet data from .csv files and export .csv, .txt and images of the graphs.
 
 # Installation
