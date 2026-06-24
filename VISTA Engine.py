@@ -35,7 +35,7 @@ os.environ['ASTROPY_CACHE_DIR'] = os.path.join(cache_dir, 'astropy_cache')
 os.environ['ASTROPY_USE_DOWNLOAD_CACHE'] = 'True'
 
 try:
-    myappid = 'mycompany.VISTA.engine.v5.4.0'
+    myappid = 'mycompany.VISTA.engine.v5.4.1'
     ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 except Exception:
     pass
@@ -270,7 +270,7 @@ def import_local_csv_pipeline():
             current_lc_clean = MockLightCurve(t_data, f_data)
 
             total_days = t_data[-1] - t_data[0]
-            periods = np.linspace(0.4, min(25.0, total_days/2.0), 4000)
+            periods = np.linspace(0.4, min(60.0, total_days), 25000)
 
             best_p, best_power, best_t0 = 1.0, -1.0, t_data[0]
             for p in periods:
@@ -475,7 +475,7 @@ def _async_pipeline_worker(user_input):
         lc_trend_obj = flatten_res[1]
         
         status_label.configure(text="[STEP 4/5] COMPUTING BLS SIGNAL INTEGRATION...", text_color="#8e44ad")
-        max_period_trial = min(25.0, max(5.0, total_days / 2.0))
+        max_period_trial = min(60.0, max(5.0, total_days / 2.0))
         periods = np.linspace(0.4, max_period_trial, 6000)
         
         try:
@@ -647,7 +647,7 @@ def safely_close_app():
     root.quit()
 
 root = ctk.CTk()
-root.title("VISTA Engine v5.4.0")
+root.title("VISTA Engine v5.4.1")
 root.geometry("1100x750")
 
 if os.path.exists(icon_full_path):
@@ -662,7 +662,7 @@ sidebar = ctk.CTkFrame(root, width=280, corner_radius=0)
 sidebar.pack(side="left", fill="y")
 
 ctk.CTkLabel(sidebar, text="VISTA Vetting Pipe", font=("Segoe UI", 16, "bold"), text_color="#2980b9").pack(pady=(20, 2), padx=20, anchor="w")
-ctk.CTkLabel(sidebar, text="Exo Planet Analyzer v5.4.0", font=("Segoe UI", 10), text_color="#7f8c8d").pack(pady=(0, 15), padx=20, anchor="w")
+ctk.CTkLabel(sidebar, text="Exo Planet Analyzer v5.4.1", font=("Segoe UI", 10), text_color="#7f8c8d").pack(pady=(0, 15), padx=20, anchor="w")
 
 ctk.CTkLabel(sidebar, text="Target Catalog Search Entry:", font=("Segoe UI", 11, "bold")).pack(padx=20, anchor="w")
 star_search_entry = ctk.CTkEntry(sidebar, width=240, height=30, font=("Consolas", 12), placeholder_text="e.g., TRAPPIST-1 c, K2-18 b")
